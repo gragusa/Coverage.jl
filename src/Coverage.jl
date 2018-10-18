@@ -204,10 +204,10 @@ module Coverage
             fullfile = joinpath(folder,file)
             if isfile(fullfile)
                 # Is it a Julia file?
-                if splitext(fullfile)[2] == ".jl"
+                if splitext(fullfile)[2] == ".cov"
                     push!(source_files, process_file(fullfile,folder))
                 else
-                    println("Coverage.process_folder: Skipping $file, not a .jl file")
+                    println("Coverage.process_folder: Skipping $file, not a .cov file")
                 end
             elseif isdir(fullfile)
                 # If it is a folder, recursively traverse
